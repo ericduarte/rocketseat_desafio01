@@ -9,7 +9,7 @@ const reqs = {count : 0}
 server.use((res,req,next)=>{
   reqs.count++;
 
-  console.log(`Número de requisições: ${reqs.count}`);
+  console.log(`Number of requests: ${reqs.count}`);
 
   next();
 })
@@ -24,6 +24,7 @@ function checkProjectExists(req, res, next){
   const project = projects.find((project) =>{
     return project.id === id;
   }); 
+  
     
   if(!project)
     return res.status.json({error:'Project not found'})    
